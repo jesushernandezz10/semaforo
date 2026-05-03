@@ -6,6 +6,7 @@ const TrafficLight = () => {
     const toggleColor = () => {
         if (color === "red") setColor("green");
         else if (color === "green") setColor("yellow");
+        else if (color === "yellow") setColor("purple");
         else setColor("red");
     };
 
@@ -34,6 +35,11 @@ const TrafficLight = () => {
                     onClick={() => setColor("green")}
                     className={`light green ${color === "green" ? "glow" : ""}`}
                 ></div>
+
+                <div
+                    onClick={() => setColor("purple")}
+                    className={`light purple ${color === "purple" ? "glow" : ""}`}
+                ></div>
             </div>
 
             <button
@@ -61,6 +67,7 @@ const TrafficLight = () => {
                 .red { background: red; }
                 .yellow { background: yellow; }
                 .green { background: green; }
+                .purple { background: purple; }
 
                 .glow {
                     opacity: 1;
